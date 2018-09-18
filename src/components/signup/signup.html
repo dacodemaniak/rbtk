@@ -1,0 +1,50 @@
+<!--
+    - @name signup.html Formulaire de demande d'invitation
+    - @author IDea Factory (dev-team@ideafactory.fr) - Sept. 2018
+    - @package /components/signup
+    - @version 1.0.0
+-->
+<form id="signup-form" class="form form-stacked">
+    <div class="form-goup col-xs-12">
+        <label for="name" required>Votre nom</label>
+        <input type="text" name="name" id="name" autocomplete="off" class="form-control required">
+        <p class="alert alert-warning helper">
+            Votre nom est obligatoire !
+        </p>
+    </div>
+
+    <div class="form-goup col-xs-12">
+            <label for="forname" required>Votre prénom</label>
+            <input type="text" name="forname" id="forname" autocomplete="off" class="form-control required">
+            <p class="alert alert-warning helper">
+                Votre prénom est obligatoire !
+            </p>
+    </div>
+
+    <div class="form-goup col-xs-12">
+            <label for="company" required>Votre société</label>
+            <input type="text" name="company" id="company" autocomplete="off" class="form-control required">
+            <p class="alert alert-warning helper">
+                Le nom de votre société est obligatoire !
+            </p>
+    </div>
+
+    <div class="form-goup col-xs-12">
+            <label for="email" required>Votre e-mail</label>
+            <input type="email" name="e-mail" id="e-mail" autocomplete="off" class="form-control required">
+            <p class="alert alert-warning helper">
+                Votre adresse e-mail est obligatoire !
+            </p>
+    </div>
+
+    <div class="form-group">
+        <button
+            type="submit"
+            id="send-it"
+            disabled
+            class="btn btn-default center-block"
+        >
+            Enregistrez-vous
+        </button>
+    </div>
+</form>
