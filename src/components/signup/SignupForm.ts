@@ -9,6 +9,8 @@ import * as $ from 'jquery';
 import { DataService } from './../../shared/services/data-service';
 import { TemplateLoader } from './../../services/template-loader';
 import { Constants } from './../../shared/constants/constants';
+import { CheckupForm } from './../checkup/CheckupForm';
+import { Toast } from './../../shared/modules/toast/toast';
 
 export class SignupForm {
     /**
@@ -108,7 +110,7 @@ export class SignupForm {
     private _blurListener(event: any): void {
         const field: JQuery = $(event.target);
         
-        
+        console.log('Champ : ' + field.attr('id'));
 
         if (field.val() === '') {
             field.next('p').removeClass('helper');
@@ -116,7 +118,7 @@ export class SignupForm {
             if (field.attr('type') === 'email') {
                 // Vérifier la forme de l'adresse
                 const regex: RegExp = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-                if (!regex.test($(this).val())) {
+                if (!regex.test(field.val())) {
                     field.next('p').removeClass('helper');
                 } else {
                     field.next('p').addClass('helper');
@@ -142,8 +144,15 @@ export class SignupForm {
         // Met à jour le service de données
         this._dataService.setUser(content);
 
+        // Affiche le toast de félicitations
+        const _toast = new Toast(
+            {
+                content: 'Vos informations ont bien été enregistrées.<br>Vous pourrez confirmer votre invitation le jour J'
+            }
+        );
+        
         // Charge le formulaire de checkOut
-
+        const checkoutForm: CheckupForm = new CheckupForm();
     }
 
 }

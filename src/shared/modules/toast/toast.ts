@@ -6,6 +6,9 @@
 * @todo Ajouter la méthode dismiss() lors de la fermeture du toast
 * @todo Ajouter la méthode present() pour afficher le toast
 */
+
+import * as $ from 'jquery';
+
 interface ToastOptions {
     mainAlertClass?: string;
     subAlertClass?: string;
